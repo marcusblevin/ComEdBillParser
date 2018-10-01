@@ -233,13 +233,10 @@ public class mainRun {
 			try {
 				
 				HtmlEmail email = new HtmlEmail();
-				email.setHostName("192.168.84.25");
+				email.setHostName("192.168.255.255");
 				email.setSmtpPort(25);
-				email.addTo("mlevin@graphet.com", "Marcus Levin");
-				email.addTo("data@graphet.com", "RT");
-				email.addTo("rrao@graphet.com", "Ramesh Rao");
-				email.addTo("ruthann@graphet.com", "Ruthann Rao");
-				email.setFrom("noreply@graphet.com", "Graphet, Inc");
+				email.addTo("test@xyz.com", "Test");
+				email.setFrom("noreply@xyz.com", "Kramerica, Inc");
 				email.setSubject(cusName+" Electric Interval Data");
 				
 				email.setHtmlMsg("<html>Customer "+cusName+" has new Electric Interval data waiting to be imported. Files are located at: <br><ul>"+folderList+"</ul><br>"+
@@ -283,7 +280,7 @@ public class mainRun {
 		Customer[] m = null;
 		
 		try {
-			Gson gson = new GsonBuilder().registerTypeAdapterFactory(new ArrayAdapterFactory()).create();
+			Gson gson           = new GsonBuilder().registerTypeAdapterFactory(new ArrayAdapterFactory()).create();
 			BufferedReader br 	= new BufferedReader(new FileReader(fname));
 			String line 		= "";
 			String json			= "";
